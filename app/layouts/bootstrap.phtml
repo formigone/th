@@ -24,12 +24,12 @@
          <ul class="nav navbar-nav navbar-right">
             <li>
                <a href="/" class="nav-link">
-                   <span class="btn">Docs</span>
+                  <span class="btn">Docs</span>
                </a>
             </li>
-             <li>
+            <li>
                <a href="https://github.com/formigone/th" class="nav-link">
-                   <span class="btn btn-success">Download</span>
+                  <span class="btn btn-success">Download</span>
                </a>
             </li>
          </ul>
@@ -59,6 +59,23 @@
       $("html,body").animate({scrollTop: $(href).offset().top - 80}, 500);
       link.closest(".navbar").find(".navbar-toggle:not(.collapsed)").click();
    });
+</script>
+<script>
+   (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+         (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+         m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+   ga('create', 'UA-20148108-4', 'formigone.com');
+   ga('send', 'pageview');
+
 </script>
 </body>
 </html>
