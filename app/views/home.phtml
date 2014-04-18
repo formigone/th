@@ -1,0 +1,111 @@
+<div id="top" class="jumbotron">
+    <div class="container">
+        <h1>th PHP framework</h1>
+
+        <p>A micro *MV framework design with brevity in mind</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <h3 id="tour" class="subhead">Brevity our goal</h3>
+
+    <div class="col-md-10 col-md-offset-1">
+        <p><strong>th</strong> PHP framework is a micro *MV framework (it's so brief, it doesn't even include a model
+            layer) designed to <strong>reduce development time</strong>, and <strong>get your going right away</strong>.
+        </p>
+
+        <p>While many MVC-type frameworks provide very simple architectures, they also add lots of files, and often
+            unnecessary layers of indirection. With <em>th</em> framework, you'll mostly be abstracting away the
+            rendering layer. This is particularly helpful when you simply need a few templated pages up, but don't want
+            multiple template files with all your data mixed in with it.</p>
+    </div>
+
+    <h3 id="tour" class="subhead">Sample Code</h3>
+
+    <div class="col-md-10 col-md-offset-1">
+        <p>There are two steps to using <em>th</em>:</p>
+        <ol>
+            <li>Create layout and view files</li>
+            <li>Create controllers</li>
+        </ol>
+
+        <hr/>
+        <h3>Layout</h3>
+
+        <p>Add your layout files in <em>app/layouts</em>. The layout is the reusable portion of your views.</p>
+
+        <div class="well">
+            <p><strong>app/layouts/responsive-layout.phtml</strong></p>
+            <code><pre>
+&lt;doctype html>
+&lt;html>
+&lt;head>
+   &lt;title>&lt;?= $this->title; ?>&lt;/title>
+&lt;/head>
+&lt;body>
+
+   ...
+
+   // sub-view files will be rendered here
+   <b>&lt;?= $this->renderView(); ?></b>
+&lt;/body>
+&lt;/html>
+</pre>
+            </code>
+        </div>
+
+        <hr/>
+        <h3>View</h3>
+
+        <p>The views are also meant to be reusable, but normally refer to smaller pieces of UI. Place them inside <b>app/views</b>.
+        </p>
+
+        <div class="well">
+            <p><strong>app/views/welcome.phtml</strong></p>
+            <code><pre>
+&lt;h1>Hello! &lt;small>Welcome to &lt;em>th&lt;/em> framework!&lt;/small>&lt;/h1>
+&lt;hr/>
+
+&lt;p>&lt;= $this->data['welcome-message']; ?>&lt;/p>
+</pre>
+            </code>
+        </div>
+
+
+
+        <hr/>
+        <h3>Controller</h3>
+
+        <p>Finally, the controllers. While not very robust, <em>th</em> controllers allow you to specify a layout, view, and pass data to the layout and view. To create a new controller, create a new PHP file named after the way you want the URL to look like, and place your code inside them. Place them at the root of your project.
+        </p>
+
+        <div class="well">
+            <p><strong>index.php</strong></p>
+            <code><pre>
+&lt;php
+
+// Include the library
+require_once ('app/App.php');
+
+// Instantiate your application + controller
+$app = new Th\App('#thFramework', 'home', 'home');
+
+// Configure
+$app->setLayout('bootstrap');
+
+// Set data to be used by layout + view
+$app->setData('title', 'I &lt;3 PHP!');
+$app->setData('welcome-message', 'Best micro framework ever...');
+
+// Render. Done!
+$app->render();
+</pre>
+            </code>
+        </div>
+
+        <p>That's it!</p>
+        <p>Now all you need to do is <a href="/download.php" class="btn btn-success">download</a> the framework, and get going!</p>
+    </div>
+
+</div>
