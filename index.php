@@ -32,7 +32,7 @@ foreach ($path as $i => $_path) {
 $route['ctrl'] = $route['ctrl'] ?: 'index';
 $route['action'] = $route['action'] ?: 'index';
 */
-require_once ('app/App.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
 $app = new Th\App('#thFramework', 'home', 'home');
 $app->setLayout('bootstrap');

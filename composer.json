@@ -1,0 +1,17 @@
+{
+   "name": "formigone/th",
+   "type": "project",
+   "license": "MIT",
+   "authors": [
+      {
+         "name": "Rodrigo Silveira",
+         "email": "webmaster@rodrigo-silveira.com"
+      }
+   ],
+   "autoload": {
+      "psr-4": {
+         "Th\\": "src"
+      }
+   }
+}
+
